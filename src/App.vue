@@ -1,28 +1,37 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="container">
+    <div class="row justify-content-center">
+      <div class="col-xs-12 col-sm-10 col-md-6">
+        <h1 class="text-center">{{title}}</h1>
+        <app-form></app-form>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import Vue from 'vue';
+import Form from './components/form/Form.vue';
 
 export default {
   name: 'app',
+  data () {
+    return {
+      title: 'Vue.js Demo Form'
+    }
+  },
   components: {
-    HelloWorld
+    appForm: Form
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  #app {
+    padding: 20px;
+  }
 </style>
